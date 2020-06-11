@@ -75,7 +75,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()}.`,
+      copyright: `Copyright © ${new Date().getFullYear()}`,
     },
   },
   presets: [
