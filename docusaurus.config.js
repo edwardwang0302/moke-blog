@@ -1,11 +1,11 @@
 module.exports = {
   title: '莫珂的博客',
   tagline: 'The tagline of my site',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://mokewy.top',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'edwardwang0302', // Usually your GitHub org/user name.
+  projectName: 'moke-blog', // Usually your repo name.
   themeConfig: {
     navbar: {
       title: '莫珂的博客',
