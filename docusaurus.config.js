@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'My Site',
+  title: '莫珂的博客',
   tagline: 'The tagline of my site',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
@@ -8,7 +8,7 @@ module.exports = {
   projectName: 'docusaurus', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'My Site',
+      title: '莫珂的博客',
       logo: {
         alt: 'My Site Logo',
         src: 'img/logo.svg',
@@ -22,7 +22,7 @@ module.exports = {
         // },
         {to: 'blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/edwardwang0302',
           label: 'GitHub',
           position: 'right',
         },
@@ -31,51 +31,51 @@ module.exports = {
     footer: {
       style: 'dark',
       links: [
+        // {
+        //   title: 'Docs',
+        //   items: [
+        //     {
+        //       label: 'Style Guide',
+        //       to: 'docs/',
+        //     },
+        //     {
+        //       label: 'Second Doc',
+        //       to: 'docs/doc2/',
+        //     },
+        //   ],
+        // },
+        // {
+        //   title: 'Community',
+        //   items: [
+        //     {
+        //       label: 'Stack Overflow',
+        //       href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+        //     },
+        //     {
+        //       label: 'Discord',
+        //       href: 'https://discordapp.com/invite/docusaurus',
+        //     },
+        //     {
+        //       label: 'Twitter',
+        //       href: 'https://twitter.com/docusaurus',
+        //     },
+        //   ],
+        // },
         {
-          title: 'Docs',
+          title: '联系我',
           items: [
             {
-              label: 'Style Guide',
-              to: 'docs/',
-            },
-            {
-              label: 'Second Doc',
-              to: 'docs/doc2/',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: 'blog',
+              label: '关于我',
+              to: 'about',
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/edwardwang0302',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()}.`,
     },
   },
   presets: [
