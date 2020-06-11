@@ -20,7 +20,7 @@ module.exports = {
         //   label: 'Docs',
         //   position: 'left',
         // },
-        {to: 'blog', label: 'Blog', position: 'left'},
+        {to: 'blog', label: '文章', position: 'left'},
         {
           href: 'https://github.com/edwardwang0302',
           label: 'GitHub',
