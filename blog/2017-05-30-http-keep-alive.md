@@ -1,16 +1,18 @@
 ---
 id: http_keep_alive
-title: HTTP长/短链接
+title: HTTP长/短连接
 author: 莫珂
 author_title: 高级前端开发工程师
 author_url: https://github.com/edwardwang0302
 author_image_url: https://avatars1.githubusercontent.com/u/8874799
 tags: [HTTP]
+description: 'HTTP长短连接'
 ---
 
 ### HTTP 协议是无状态的
-`HTTP` 协议是无状态的，指的是协议对于事务处理没有记忆能力，服务器不知道客户端是什么状态。也就是说，打开一个服务器上的网页和你之前打开这个服务器上的网页之间没有任何联系。HTTP 是一个无状态的面向连接的协议，无状态不代表 HTTP 不能保持 TCP 连接，更不能代表 HTTP 使用的是 UDP 协议（无连接）。
+`HTTP` 协议是无状态的，指的是协议对于事务处理没有记忆能力，服务器不知道客户端是什么状态。也就是说，打开
 <!--truncate-->
+一个服务器上的网页和你之前打开这个服务器上的网页之间没有任何联系。HTTP 是一个无状态的面向连接的协议，无状态不代表 HTTP 不能保持 TCP 连接，更不能代表 HTTP 使用的是 UDP 协议（无连接）。
 ### 什么是长连接、短连接？
 在 `HTTP/1.0` 中，默认使用的是短连接。也就是说，浏览器和服务器每进行一次 HTTP 操作，就要经过三次握手建立一次连接，但任务结束就中断连接。
 

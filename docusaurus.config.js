@@ -56,16 +56,25 @@ module.exports = {
           title: '',
           items: [
             {
-              label: 'Github',
+              label: 'Github: edwardwang0302',
               href: 'https://github.com/edwardwang0302',
             },
+          ],
+        },
+        {
+          title: '',
+          items: [
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: 'Bilibili: 莫珂(uid:401622255)',
+              href: 'https://space.bilibili.com/401622255',
             },
+          ],
+        },
+        {
+          title: '',
+          items: [
             {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              label: '邮箱：edwardwang19920302@gmail.com',
             },
           ],
         },

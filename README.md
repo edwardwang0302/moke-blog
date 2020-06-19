@@ -1,33 +1,5 @@
-# Website
+# 莫珂的博客
 
-This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
+这个项目是我之前博客的轻量化版本，近期因为我自己的阿里云ECS服务器到期了加之最近有精力整理一下。于是这个博客就诞生了，为了将自己以往的一些内容进行迁移留给自己一片私人空间。
 
-### Installation
-
-```
-$ yarn
-```
-
-### Local Development
-
-```
-$ yarn start
-```
-
-This command starts a local development server and open up a browser window. Most changes are reflected live without having to restart the server.
-
-### Build
-
-```
-$ yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-### Deployment
-
-```
-$ GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+因为网站托管不在大陆地区备案，因此可能个别时候访问速度较慢，也无法使用之前七牛CDN资源加速的服务。
