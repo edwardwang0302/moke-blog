@@ -20,14 +20,14 @@ module.exports = {
         src: 'img/favicon.png',
       },
       links: [
+        {to: '/blog', label: '文章', position: 'left'},
+        {to: '/about', label: '关于我', position: 'left'},
         // {
         //   to: 'docs/',
         //   activeBasePath: 'docs',
         //   label: 'Docs',
         //   position: 'left',
         // },
-        {to: '/', label: '文章', position: 'left'},
-        {to: '/about', label: '关于我', position: 'left'},
         {
           href: 'https://github.com/edwardwang0302',
           label: 'GitHub',
@@ -98,9 +98,9 @@ module.exports = {
             'https://github.com/facebook/docusaurus/edit/master/website/',
         },
         blog: {
-          path: './blog',
-          routeBasePath: "/",
-          showReadingTime: true,
+          // path: './blog',
+          // routeBasePath: "/blog",
+          // showReadingTime: true,
           // Please change this to your repo.
           // editUrl:
           //   'https://github.com/facebook/docusaurus/edit/master/website/blog/',
