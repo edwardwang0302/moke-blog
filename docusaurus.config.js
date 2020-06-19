@@ -1,6 +1,6 @@
 module.exports = {
   title: '莫珂的博客',
-  tagline: 'The tagline of my site',
+  tagline: 'Release my personality and pursuing my dream',
   url: 'https://mokewy.top',
   baseUrl: '/',
   favicon: 'img/favicon.png',
@@ -22,6 +22,7 @@ module.exports = {
       links: [
         {to: '/blog', label: '文章', position: 'left'},
         {to: '/about', label: '关于我', position: 'left'},
+        {to: '/blog/tags', label: '分类标签', position: 'left'},
         // {
         //   to: 'docs/',
         //   activeBasePath: 'docs',
