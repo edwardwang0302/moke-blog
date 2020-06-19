@@ -271,7 +271,11 @@ function App(props) {
   )
 }
 ```
-我们点击 addNum 后，发生了 setNum 重新 render App 对应传入 <ChildMemo count={count} addNum={addNum} /> addNum 函数被认为更新了 也会重新执行 Child 的 render
+我们点击 addNum 后，发生了 setNum 重新 render App 对应传入 
+```js
+<ChildMemo count={count} addNum={addNum} /> 
+```
+addNum 函数被认为更新了 也会重新执行 Child 的 render
 
 我们可以用 useCallback 对函数进行缓存，改写后就可以达到性能优化的效果了！
 ```js
