@@ -6,7 +6,6 @@ author_title: 高级前端开发工程师
 author_url: https://github.com/edwardwang0302
 author_image_url: https://avatars1.githubusercontent.com/u/8874799
 tags: [HTTP, CSS, 性能优化]
-draft: true
 description: 'css sprites 雪碧图优缺点'
 ---
 雪碧图的英文是CSS Sprites。 其目的是将多张比较小的图片，合并到一张大的图片上面，大的图片背景透明，使用的时候，通过把该张图片当做背景图片，通过不同的 `background-position` 定位来展示的那部分图片。
