@@ -6,63 +6,62 @@ author_title: 高级前端开发工程师
 author_url: https://github.com/edwardwang0302
 author_image_url: https://avatars1.githubusercontent.com/u/8874799
 tags: [ES6, Webpack]
+description: 'webpack基础用法总结'
 ---
 
 ### 什么是 webpack
-webpack 可以看做是模块打包机：他做的事情是，分析你的项目结构，找到 JavaScript 模块以及其他的一些浏览器不能直接运行的扩展语言（Scss、TypeScript 等），将其打包为合适的格式以供浏览器使用
+webpack 可以看做是模块打包机：他做的事情是，分析你的项目结构，找到 JavaScript 模块以及其他的一些浏览<!--truncate-->
+器不能直接运行的扩展语言（Scss、TypeScript 等），将其打包为合适的格式以供浏览器使用
 
-<!--truncate-->
 构建就是把源代码转换成发布到线上可执行的 JavaScript、CSS、HTML 代码，包括以下内容：
 
-代码转换：TypeScript 编译成 JavaScript、SCSS 编译成 CSS 等等
-文件优化：压缩 JavaScript、CSS、HTML 代码，压缩合并图片等
-代码分割：提取多个页面的公共代码、提取首屏不需要执行部分的代码让其异步加载
-模块合并：在采用模块化的项目有很多模块和文件，需要构建功能把模块分类合并成一个文件
-自动刷新：监听本地源代码的变化，自动构建，刷新浏览器
-代码校验：在代码被提交到仓库前需要检测代码是否符合规范，以及单元测试是否通过
-自动发布：更新完代码后，自动构建出线上发布代码并传输给发布系统。
-构建其实是工程化、自动化思想在前端开发中的体现。把一系列流程用代码去实现，让代码自动化地执行这一系列复杂的流程。
++ 代码转换：TypeScript 编译成 JavaScript、SCSS 编译成 CSS 等等
++ 文件优化：压缩 JavaScript、CSS、HTML 代码，压缩合并图片等
++ 代码分割：提取多个页面的公共代码、提取首屏不需要执行部分的代码让其异步加载
++ 模块合并：在采用模块化的项目有很多模块和文件，需要构建功能把模块分类合并成一个文件
++ 自动刷新：监听本地源代码的变化，自动构建，刷新浏览器
++ 代码校验：在代码被提交到仓库前需要检测代码是否符合规范，以及单元测试是否通过
++ 自动发布：更新完代码后，自动构建出线上发布代码并传输给发布系统。
++ 构建其实是工程化、自动化思想在前端开发中的体现。把一系列流程用代码去实现，让代码自动化地执行这一系列复杂的流程。
 
 ### webpack 的基本概念
-入口(entry point): 指示 webpack 应该使用哪个模块，来作为构建其内部依赖图的开始，webpack 会找出有哪些模块和 library 是入口起点（直接和间接）依赖的。
++ 入口(entry point): 指示 webpack 应该使用哪个模块，来作为构建其内部依赖图的开始，webpack 会找出有哪些模块和 library 是入口起点（直接和间接）依赖的。
 
-默认值是 ./src/index.js，然而，可以通过在 webpack 配置中配置 entry 属性，来指定一个不同的入口起点（或者也可以指定多个入口起点）。
-出口 output: 属性告诉 webpack 在哪里输出它所创建的 bundles，以及如何命名这些文件，主输出文件默认为 ./dist/main.js，其他生成文件的默认输出目录是 ./dist
+> 默认值是 ./src/index.js，然而，可以通过在 webpack 配置中配置 entry 属性，来指定一个不同的入口起点（或者也可以指定多个入口起点）。
++ 出口 output: 属性告诉 webpack 在哪里输出它所创建的 bundles，以及如何命名这些文件，主输出文件默认为 ./dist/main.js，其他生成文件的默认输出目录是 ./dist
 
-loader: 让 webpack 能够去处理那些非 JavaScript 文件（webpack 自身只理解 JavaScript）。loader 可以将所有类型的文件转换为 webpack 能够处理的有效模块，然后你就可以利用 webpack 的打包能力，对它们进行处理。
++ loader: 让 webpack 能够去处理那些非 JavaScript 文件（webpack 自身只理解 JavaScript）。loader 可以将所有类型的文件转换为 webpack 能够处理的有效模块，然后你就可以利用 webpack 的打包能力，对它们进行处理。
 
-注意，loader 能够 import 导入任何类型的模块（例如 .css 文件），这是 webpack 特有的功能，其他打包程序或任务执行器的可能并不支持。我们认为这种语言扩展是有很必要的，因为这可以使开发人员创建出更准确的依赖关系图。
+> 注意，loader 能够 import 导入任何类型的模块（例如 .css 文件），这是 webpack 特有的功能，其他打包程序或任务执行器的可能并不支持。我们认为这种语言扩展是有很必要的，因为这可以使开发人员创建出更准确的依赖关系图。
 
-插件 plugins: loader 被用于转换某些类型的模块，而插件则可以用于执行范围更广的任务。插件的范围包括，从打包优化和压缩，一直到重新定义环境中的变量。插件接口功能极其强大，可以用来处理各种各样的任务。
++ 插件 plugins: loader 被用于转换某些类型的模块，而插件则可以用于执行范围更广的任务。插件的范围包括，从打包优化和压缩，一直到重新定义环境中的变量。插件接口功能极其强大，可以用来处理各种各样的任务。
 
-模式 mode: 通过选择 development 或 production 之中的一个，来设置 mode 参数，你可以启用相应模式下的 webpack 内置的优化
++ 模式 mode: 通过选择 development 或 production 之中的一个，来设置 mode 参数，你可以启用相应模式下的 webpack 内置的优化
 
 ### webpack 构建过程
-从 Entry 里配置的 Module 开始递归解析 Entry 依赖的所有 Module。
-每找到一个 Module， 就会根据配置的 Loader 去找出对应的转换规则。
-对 Module 进行转换后，再解析出当前 Module 依赖的 Module。
-这些模块会以 Entry 为单位进行分组，一个 Entry 和其所有依赖的 Module 被分到一个组也就是一个 Chunk。
-最后 Webpack 会把所有 Chunk 转换成文件输出。
-在整个流程中 Webpack 会在恰当的时机执行 Plugin 里定义的逻辑。
+1. 从 Entry 里配置的 Module 开始递归解析 Entry 依赖的所有 Module。
+2. 每找到一个 Module， 就会根据配置的 Loader 去找出对应的转换规则。
+3. 对 Module 进行转换后，再解析出当前 Module 依赖的 Module。
+4. 这些模块会以 Entry 为单位进行分组，一个 Entry 和其所有依赖的 Module 被分到一个组也就是一个 Chunk。
+5. 最后 Webpack 会把所有 Chunk 转换成文件输出。
+6. 在整个流程中 Webpack 会在恰当的时机执行 Plugin 里定义的逻辑。
 
 ### 开发环境和生产环境
 我们在日常的前端开发工作中，一般都会有两套构建环境：一套开发时使用，一套供线上使用。
 
-development: 用于开发的配置文件，用于定义 webpack dev server 和其他东西
-production: 用于生产的配置文件，用于定义 UglifyJSPlugin，sourcemaps 等
++ development: 用于开发的配置文件，用于定义 `webpack dev server` 和其他东西
++ production: 用于生产的配置文件，用于定义 `UglifyJSPlugin`，`sourcemaps` 等
 简单来说，开发时可能需要打印 debug 信息，包含 sourcemap 文件，而生产环境是用于线上的即代码都是压缩后，运行时不打印 debug 信息等。譬如 axios、antd 等我们的生产环境中需要使用到那么我们应该安装该依赖在生产环境中，而 webpack-dev-server 则是需要安装在开发环境中
 
-平时我们 npm 中安装的文件中有 -S -D, -D 表示我们的依赖是安装在开发环境的，而-S 的是安装依赖在生产环境中。
+平时我们 `npm` 中安装的文件中有 -S -D, -D 表示我们的依赖是安装在开发环境的，而-S 的是安装依赖在生产环境中。
 
 本文就来带你搭建基本的前端开发环境，前端开发环境需要什么呢？
 
-构建发布需要的 HTML、CSS、JS、图片等资源
-使用 CSS 预处理器，这里使用 less
-配置 babel 转码器 => 使用 es6+
-处理和压缩图片
-配置热加载，HMR
-以上配置就可以满足前端开发中需要的基本配置。下面是本文打包后的效果图：
-
++ 构建发布需要的 HTML、CSS、JS、图片等资源
++ 使用 CSS 预处理器，这里使用 less
++ 配置 babel 转码器 => 使用 es6+
++ 处理和压缩图片
++ 配置热加载，HMR
 
 
 ### 搭建基本的开发环境
@@ -81,24 +80,24 @@ npm i webpack webpack-cli -D
 ```
 –mode 模式 (必选，不然会有 WARNING)，是 webpack4 新增的参数选项，默认是 production
 
---mode production 生产环境
++ --mode production 生产环境
 提供 uglifyjs-webpack-plugin 代码压缩
 不需要定义 new webpack.DefinePlugin({ "process.env.NODE_ENV": JSON.stringify("production") }) 默认 production
 默认开启 NoEmitOnErrorsPlugin -> optimization.noEmitOnErrors, 编译出错时跳过输出，以确保输出资源不包含错误
 默认开启 ModuleConcatenationPlugin -> optimization.concatenateModules, webpack3 添加的作用域提升(Scope Hoisting)
---mode development 开发环境
++ --mode development 开发环境
 使用 eval 构建 module, 提升增量构建速度
 不需要定义 new webpack.DefinePlugin({ "process.env.NODE_ENV": JSON.stringify("development") }) 默认 development
 默认开启 NamedModulesPlugin -> optimization.namedModules 使用模块热替换(HMR)时会显示模块的相对路径
 添加了 scripts 之后，新建src/index.js，然后执行npm run build ，你就会发现新增了一个 dist 目录，里边存放的是 webpack 构建好的 main.js 文件。
 
-ps npm scripts 使用指南
+ps [npm scripts 使用指南](http://www.ruanyifeng.com/blog/2016/10/npm_scripts.html)
 
-### 新建 webpack.config.js 文件
+#### 新建 webpack.config.js 文件
 要想对 webpack 中增加更多的配置信息，我们需要建立一个 webpack 的配置文件。在根目录下创建 webpack.config.js 后再执行 webpack 命令，webpack 就会使用这个配置文件的配置了
 
 配置中具备以下的基本信息：
-
+```js
 module.exports = {
   entry: '', // 打包入口：指示 webpack 应该使用哪个模块，来作为构建其内部依赖图的开始
   output: '', // 出口
@@ -107,10 +106,11 @@ module.exports = {
   module: {}, // 模块配置：配置loader（处理非 JavaScript 文件，比如 less、sass、jsx、图片等等）等
   plugins: [] // 插件的配置：打包优化、资源管理和注入环境变量
 }
+```
 
-### 配置打包入口和出口
+#### 配置打包入口和出口
 首先我们往 webpack.config.js 添加点配置信息
-
+```js
 const path = require('path')
 
 module.exports = {
@@ -123,11 +123,12 @@ module.exports = {
     filename: 'bundle.js'
   }
 }
+```
 上面我们定义了打包入口 ./src/index.js，打包出口为 ./dist, 打包的文件夹名字为bundle.js，执行npm run build命令后，index.js 文件会被打包为 bundle.js 文件。此时随便建立一个 html 文件引用这个bundle.js就可以看到你在index.js 写的代码了。
 
 path.resolve([…paths]) 方法会把一个路径或路径片段的序列解析为一个绝对路径。
 
-### 使用 html-webpack-plugin 创建 html 文件
+#### 使用 html-webpack-plugin 创建 html 文件
 更多情况下我们不希望打包一次，就新建一次 html 文件来引用打包后的文件，这样显得不智能或者说当你打包的文件名修改后，引用路径就会出错。
 
 这个时候我们就可以使用 html-webpack-plugin 插件来将 HTML 引用路径和我们的构建结果关联起来。
@@ -149,7 +150,7 @@ module.exports = {
 ```
 重新执行 npm run build, dist 目录就会多个 index.html 并引入了 bundle.js.
 
-### 压缩 html 文件
+#### 压缩 html 文件
 修改 webpack.config.js
 ```js
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -169,7 +170,7 @@ module.exports = {
   ]
 }
 ```
-### 打包 css 文件
+#### 打包 css 文件
 我们希望使用 webpack 来进行构建 css 文件，，为此，需要在配置中引入 loader 来解析和处理 CSS 文件：
 ```js
 npm install style-loader css-loader -D
@@ -236,7 +237,7 @@ module.exports = {
   ]
 }
 ```
-打包 less 文件
+#### 打包 less 文件
 开发中通常会用到一门预处理语言，这里以less为例，通过less-loader可以打包 less 为 css 文件
 ```js
 npm install less less-loader -D
@@ -274,7 +275,7 @@ module.exports = {
 
 webpack@v4 升级踩坑: 关于使用 mini-css-extract-plugin 的注意点。
 
-### 打包图片
+#### 打包图片
 npm install file-loader url-loader -D
 file-loader: 可以用于处理很多类型的文件，它的主要作用是直接输出文件，把构建后的文件路径返回。
 
@@ -580,16 +581,3 @@ module.exports = {
 
 ### 结语
 前面讲到的知识都是 webpack 的一些基础的知识，更多的资料可以查询webpack 中文官网，官网讲的比较详细，我这里也是讲最常的配置，也是一篇入门系列的文章，文中涉及的知识点还有很多地方还需要完善，譬如 优化 webpack 的构建速度， 减小打包的体积等等。
-
-### 参考
-webpack4.x 入门一篇足矣
-Webpack4 不深不浅的实践教程
-webpack 之 babel 配置和 HMR
-使用 webpack 4 和 Babel 7 配置 Vue.js 工程模板
-webpack 4 ：从 0 配置到项目搭建
-webpack 详解
-手写一个 webpack4.0 配置
-Webpack 4 教程：从零配置到生产发布（2018）
-Webpack 揭秘——走向高阶前端的必经之路
-珠峰架构师培训公开课 webpack4.0 进阶
-webpack 官网

@@ -59,13 +59,22 @@ module.exports = {
               label: 'Github',
               href: 'https://github.com/edwardwang0302',
             },
+          ],
+        },
+        {
+          title: '',
+          items: [
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: 'Bilibili',
+              href: 'https://space.bilibili.com/401622255',
             },
+          ],
+        },
+        {
+          title: '',
+          items: [
             {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              label: '微信：edwardwang0302',
             },
           ],
         },

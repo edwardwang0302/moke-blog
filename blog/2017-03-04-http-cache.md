@@ -6,15 +6,16 @@ author_title: 高级前端开发工程师
 author_url: https://github.com/edwardwang0302
 author_image_url: https://avatars1.githubusercontent.com/u/8874799
 tags: [HTTP]
+description: 'HTTP缓存 实现步骤 强缓存 协商缓存'
 ---
 
 ### 缓存实现的步骤
 + 首先是当用户请求资源时，会判断是否有缓存，如果没有，则会向原服务器请求资源。
+<!--truncate-->
 + 如果有缓存，则会进入强缓存的范畴，判断缓存是否新鲜
 + 如果缓存新鲜，则会直接返回缓存副本给客户端。
 + 如果缓存不新鲜了，则表示强缓存失败，将会进入到协商缓存。
 + 协商缓存将判断是否存在 Etag 和 Last-Modified 首部
-<!--truncate-->
 + 如果未发生变化，则表示命中了协商缓存，会重定向到缓存副本，将资源返回给客户端
 + 否则的话表示协商缓存未命中，服务器会返回新的资源。
 
@@ -161,8 +162,8 @@ console.log('http://127.0.0.1:3301')
 增加文件内容对比，引入Etag
 缓存优先级
 
-> Pragma > Cache-Control > Expires > ETag > Last-Modified
+> `Pragma` > `Cache-Control` > `Expires` > `ETag` > `Last-Modified`
 
 #### 参考与相关链接：
-浅谈 HTTP 缓存
-面试精选之 http 缓存
+[浅谈 HTTP 缓存](https://juejin.im/post/5bdeabbbe51d4505466cd741#heading-25)
+[面试精选之 http 缓存](https://juejin.im/post/5b3c87386fb9a04f9a5cb037#heading-0)

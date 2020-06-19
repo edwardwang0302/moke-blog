@@ -9,17 +9,16 @@ tags: [ES6, JavaScript]
 ---
 
 工作中ES6的诸多实用场景极大地提高了我们的开发效率，因此这里记录一下，多使用新语法去探索一下怎么更好的去写代码吧。
-
+<!--truncate-->
 下面分享个人开发中常用的 js 写法技巧，希望对各位有所帮助。
 
 ### 使用 let / const
-var 命令会发生”变量提升“现象，即变量可以在声明之前使用，值为 undefined。这种现象多多少少是有些奇怪的。
-<!--truncate-->
+`var` 命名会发生”变量提升“现象，即变量可以在声明之前使用，值为 `undefined`。这种现象多多少少是有些奇怪的。
 个人认为，对声明的变量确定后面不会发生更改时，即使性能上没有太大提升差异在，但使用 const, 代码的可读性也会增强很多。
 
-const 实际上保证的，并不是变量的值不得改动，而是变量指向的那个内存地址所保存的数据不得改动。
-let 变量指向的内存地址，保存的只是一个指向实际数据的指针
-补充 const 定义的变量不是数据不可变，而是保存的引用地址不能发生改变。例子如下：
++ `const` 实际上保证的并不是变量的值不得改动，而是变量指向的那个内存地址所保存的数据不得改动。
++ `let` 变量指向的内存地址，保存的只是一个指向实际数据的指针
+补充 `const` 定义的变量不是数据不可变，而是保存的引用地址不能发生改变。例子如下：
 
 ```js
 const person = { age: 22 }
@@ -27,7 +26,7 @@ person.age = 1
 
 console.log(person.age ) // 1
 ```
-详情看 let 和 const 命令
+详情看 [let 和 const 命令](https://es6.ruanyifeng.com/#docs/let)
 
 ### 解构赋值
 ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。
@@ -74,7 +73,7 @@ function Destructuring({ name, age }) {
 const params = { name: 'guodada', age: 22 }
 Destructuring(params)
 ```
-更多用法见 变量的解构赋值
+更多用法见 [变量的解构赋值](https://es6.ruanyifeng.com/#docs/destructuring)
 
 ES6 允许在对象之中，直接写变量。这时，属性名为变量名, 属性值为变量的值。
 ```js
@@ -227,7 +226,7 @@ ps 虽然好用，但是有时候适用场景不好，比如我们在拉取列�
 // 结合 Promise.all
 const [result1, result2, result3] = await Promise.all([anAsyncCall(), thisIsAlsoAsync(), oneMore()])
 ```
-传送门：async 函数
+传送门：[async 函数](https://es6.ruanyifeng.com/#docs/async)
 
 ### 利用 class 封装代码
 主要是抽离代码逻辑，使得代复用性加强。同时，class 的形式会让结构变得更加清晰，譬如：
@@ -296,7 +295,7 @@ MyForm.defaultLimit(1, 20)
 ```
 static ：静态属性，类可以直接调用
 constructor : 实例化类的时候调用，即 new MyForm(), 这里没用到
-更多知识请阅 Class 的基本语法
+更多知识请阅 [Class 的基本语法](https://es6.ruanyifeng.com/#docs/class)
 
 优化 if/else 语句
 当逻辑或||时，找到为 true 的分项就停止处理，并返回该分项的值，否则执行完，并返回最后分项的值。
@@ -434,7 +433,7 @@ Map 是一种键值对的数据结构对象，它的匹配更加严格。它会�
 limitMap.get(1) // /^(\d|[1-4]\d|50)$/g
 limitMap.get('1') // undefined
 ```
-更多详见 Set 和 Map 数据结构
+更多详见 [Set 和 Map 数据结构](https://es6.ruanyifeng.com/#docs/set-map)
 
 ### 其他
 函数参数默认值
