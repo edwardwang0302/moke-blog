@@ -56,7 +56,7 @@ module.exports = {
           title: '',
           items: [
             {
-              label: 'Github',
+              label: 'Github: edwardwang0302',
               href: 'https://github.com/edwardwang0302',
             },
           ],
@@ -65,7 +65,7 @@ module.exports = {
           title: '',
           items: [
             {
-              label: 'Bilibili',
+              label: 'Bilibili: 莫珂(uid:401622255)',
               href: 'https://space.bilibili.com/401622255',
             },
           ],
@@ -74,7 +74,7 @@ module.exports = {
           title: '',
           items: [
             {
-              label: '微信：edwardwang0302',
+              label: '邮箱：edwardwang19920302@gmail.com',
             },
           ],
         },
