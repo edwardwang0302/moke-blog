@@ -17,7 +17,7 @@ function About() {
               <div className={styles["team-member"]}>
                 <img className={styles["team-member-img"], [styles["mx-auto"], styles["rounded-circle"]].join(' ')} src={useBaseUrl("img/about/avatar.png")} alt="" />
                 <h4 className={styles["team-member-h4"]}>王宇（莫珂）</h4>
-                <p className={styles["text-muted"]}>热爱工作，爱好数码与摄影，B站UP主</p>
+                <p className={styles["text-muted"]}>热爱工作爱钻研，爱好数码与摄影，B站UP主</p>
                 {/* <a className={[styles.btn, styles["btn-dark"], styles["btn-social"], styles["mx-2"]].join(' ')} href="#!">
                   <i className="fab fa-twitter"></i>
                 </a>
@@ -33,7 +33,7 @@ function About() {
           <div className={styles.row}>
             <div className={[styles["col-lg-8"], styles["mx-auto"], styles["text-center"]].join(' ')}>
               <p className={[styles["large"], styles["text-muted"]].join(' ')}>
-                我是莫珂，一名前端开发工程师，毕业于西安邮电大学，计算机科学于技术专业。过去5年曾在Alibaba公司从事前端开发。擅长使用React技术栈，能够快速开发业务需求提炼可复用的组件。同时了解Vue，Electron，NodeJS，有EggJS框架开发Node后台和MpVue开发微信小程序经验
+                我是莫珂，一名92年前端开发工程师，毕业于西安邮电大学，本科计算机科学与技术专业。过去5年曾在Alibaba公司从事前端开发。擅长使用React技术栈，能够快速开发业务需求提炼可复用的组件。同时了解Vue，Electron，NodeJS，有EggJS框架开发Node后台应用和MpVue开发微信小程序经验。
               </p>
             </div>
           </div>
