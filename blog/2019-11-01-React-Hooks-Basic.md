@@ -1,10 +1,10 @@
 ---
 id: react-hooks-basic
 title: React Hooks笔记
-author: 莫珂
-author_title: 高级前端开发工程师
-author_url: https://github.com/edwardwang0302
-author_image_url: https://avatars1.githubusercontent.com/u/8874799
+# author: 莫珂
+# author_title: 高级前端开发工程师
+# author_url: https://github.com/edwardwang0302
+# author_image_url: https://avatars1.githubusercontent.com/u/8874799
 tags: [React, Hooks]
 description: 'React Hooks笔记'
 ---

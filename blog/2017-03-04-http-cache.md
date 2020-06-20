@@ -1,10 +1,10 @@
 ---
 id: httpcache
 title: HTTP缓存
-author: 莫珂
-author_title: 高级前端开发工程师
-author_url: https://github.com/edwardwang0302
-author_image_url: https://avatars1.githubusercontent.com/u/8874799
+# author: 莫珂
+# author_title: 高级前端开发工程师
+# author_url: https://github.com/edwardwang0302
+# author_image_url: https://i2.hdslb.com/bfs/face/c52d43162b9be508b7c807b3bb48ae20d4556420.jpg_64x64.jpg
 tags: [HTTP]
 description: 'HTTP缓存 实现步骤 强缓存 协商缓存'
 ---
