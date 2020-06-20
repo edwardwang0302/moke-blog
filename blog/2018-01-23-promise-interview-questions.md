@@ -1,10 +1,10 @@
 ---
 id: promise-interview-questions
 title: promise经典面试题
-author: 莫珂
-author_title: 高级前端开发工程师
-author_url: https://github.com/edwardwang0302
-author_image_url: https://avatars1.githubusercontent.com/u/8874799
+# author: 莫珂
+# author_title: 高级前端开发工程师
+# author_url: https://github.com/edwardwang0302
+# author_image_url: https://avatars1.githubusercontent.com/u/8874799
 tags: [ES6, Promise]
 description: 'promise经典面试题'
 ---
