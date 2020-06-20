@@ -12,18 +12,20 @@ description: 'HTTP缓存 实现步骤 强缓存 协商缓存'
 ### 缓存实现的步骤
 + 首先是当用户请求资源时，会判断是否有缓存，如果没有，则会向原服务器请求资源。
 <!--truncate-->
-+ 如果有缓存，则会进入强缓存的范畴，判断缓存是否新鲜
++ 如果有缓存，则会进入强缓存的范畴，通过判断`http header`缓存是否新鲜
 + 如果缓存新鲜，则会直接返回缓存副本给客户端。
 + 如果缓存不新鲜了，则表示强缓存失败，将会进入到协商缓存。
-+ 协商缓存将判断是否存在 Etag 和 Last-Modified 首部
++ 服务器根据`request header`判断是否命中协商缓存。主要是 `Etag` 和 `If-None-Match`是否一致以及 `Last-Modified` 和 `If-Modified-Since` 之间是否发生过修改
 + 如果未发生变化，则表示命中了协商缓存，会重定向到缓存副本，将资源返回给客户端
 + 否则的话表示协商缓存未命中，服务器会返回新的资源。
++ `ctrl+f5` 刷新会直接从服务器加载，跳过强缓存和协商缓存。
++ `f5` 刷新会跳过强缓存，但会检查协商缓存。
 
 
 ### 强缓存
 > 服务端告知客户端缓存时间后，由客户端判断并决定是否使用缓存。
 
-强缓存是通过 `Expires` 首部或 `Cache-Control: max-age` 来实现的。
+强缓存是通过 `Expires`（`http1.0`规范，用一个绝对时间的 `GMT` 格式代表过期时间） 首部或 `Cache-Control: max-age` （`http1.1`规范，判断资源最大生命周期，单位是秒） 来实现的。
 
 Expires: 响应头，代表该资源的过期时间。
 Cache-Control: 请求/响应头，缓存控制字段，精确控制缓存策略。
@@ -91,18 +93,11 @@ Last-Modified （上次修改时间）主要配合 If-Modified-Since 或者 If-U
 
 If-Modified-Since: 请求头
 
-
-
 首次请求资源时，服务器在返回资源的同时，会在 Response Headers 中写入 Last-Modified 首部，表示该资源在服务器上的最后修改时间。
 当再次请求该资源时，会在 Request Headers 中写入 If-Modified-Since 首部，此时的 If-Modified-Since 的值是首次请求资源时所返回的 Last-Modified 的值。
 服务器接收到请求后，会根据 If-Modified-Since 的值判断资源在该日期之后是否发生过变化。
 如果没有，则会返回 304 Not Modified;如果变化了，则会返回变化过后的资源，同时更新 Last-Modified 的值。
-资源未更新 network 面板截图
 
-
-资源发生更新 network 面板截图
-
-可以看到 Last-Modified 和 If-Modified-Since 标识的时间不一样
 ```js
 // server.js - demo
 const http = require('http')
